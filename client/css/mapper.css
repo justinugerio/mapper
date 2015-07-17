@@ -7,3 +7,9 @@
     position: absolute;
     z-index: -1;
 }
+
+svg {
+    width: 900px;
+    height: 600px;
+    border: 1px lightsalmon solid;
+}
