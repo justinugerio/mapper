@@ -1,5 +1,8 @@
 
 // main start function
-$(function() {
-	alert('hello there!');	
+$(function () {
+
+    console.log('hello there!');
+
+
 });
