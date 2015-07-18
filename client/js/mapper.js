@@ -44,8 +44,9 @@ $(function () {
      });
 */
 
-    var createMap = function (countries) {
-        var aProjection = d3.geo.mercator();
+    var createMap = function (countries) {      // create map handler for getJSON call
+        //var aProjection = d3.geo.albersUsa();
+        var aProjection = d3.geo.mercator().scale(100);
         var geoPath = d3.geo.path().projection(aProjection);
 
         d3.select('svg').selectAll('path').data(countries.features)
@@ -55,6 +56,6 @@ $(function () {
             .attr('class', 'countries');
     };
 
-    createMap(Mapper.world);
+    $.getJSON('world.geojson', createMap);  // asynchronous call to get data in world.geojson
 
 });
