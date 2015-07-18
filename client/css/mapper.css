@@ -31,7 +31,7 @@ path.countries {
     stroke-width: 1;
     stroke: black;
     opacity: .5;
-    fill: red;
+    fill: #ff6b00;
 }
 circle.cities {
     stroke-width: 1;

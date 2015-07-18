@@ -2,34 +2,7 @@
 // main start function
 $(function () {
 
-    /*
-    console.log('hello there!');
-
-    d3.select('#mapper-panel-body-id').append('div')
-        .style('border', '1px black solid')
-        .html('hello world');
-
-    d3.select('#mapper-panel-body-id').select('div')
-        .style('background-color', 'orange')
-        .style('font-size', '24px')
-        .attr('id', 'newDiv')
-        .attr('class', 'd3div')
-        .on('click', function () {
-            console.log('you click on a div!!!');
-        })
-
-    d3.select('svg')
-        .append('line')
-        .attr('x1', 20)
-        .attr('y1', 20)
-        .attr('x2', 400)
-        .attr('y2', 400)
-        .style('stroke', 'black')
-        .style('stoke-width', '2px');
-     */
-
-
-
+/*
     d3.select('svg')
         .append('circle')
         .attr('r', 20)
@@ -65,27 +38,23 @@ $(function () {
 
     d3.selectAll('circle').transition().duration(3000).attr('cy', 200);
 
-/*
+
      d3.csv('cities.csv', function (d) {
         console.log(d);
      });
 */
 
-    createMap = function (countries) {
-    var aProjection = d3.geo.mercator();
-    var geoPath = d3.geo.path().projection(aProjection);
+    var createMap = function (countries) {
+        var aProjection = d3.geo.mercator();
+        var geoPath = d3.geo.path().projection(aProjection);
 
-    d3.select('svg').selectAll('path').data(countries.features)
-        .enter()
-        .append('path')
-        .attr('d', geoPath)
-        .attr('class', 'countries');
+        d3.select('svg').selectAll('path').data(countries.features)
+            .enter()
+            .append('path')
+            .attr('d', geoPath)
+            .attr('class', 'countries');
     };
 
-     d3.json('test.json', function (error, data) {
-        console.log(error, data);
-     });
-
-
+    createMap(Mapper.world);
 
 });
