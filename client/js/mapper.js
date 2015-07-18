@@ -65,27 +65,27 @@ $(function () {
 
     d3.selectAll('circle').transition().duration(3000).attr('cy', 200);
 
-
+/*
      d3.csv('cities.csv', function (d) {
         console.log(d);
      });
+*/
 
-/*
     createMap = function (countries) {
     var aProjection = d3.geo.mercator();
     var geoPath = d3.geo.path().projection(aProjection);
 
     d3.select('svg').selectAll('path').data(countries.features)
-    .enter()
-    .append('path')
-    .attr('d', geoPath)
-    .attr('class', 'countries');
+        .enter()
+        .append('path')
+        .attr('d', geoPath)
+        .attr('class', 'countries');
     };
 
-     d3.json('world.json', function (error, data) {
-     console.log(error, data);
+     d3.json('test.json', function (error, data) {
+        console.log(error, data);
      });
-*/
+
 
 
 });
