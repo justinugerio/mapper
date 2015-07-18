@@ -1,5 +1,11 @@
 /* CSS declarations go here */
 
+svg {
+    width: 900px;
+    height: 600px;
+    border: 1px lightsalmon solid;
+}
+
 .main-header {
     background-color: #e74347;
     width: 100%;
@@ -8,8 +14,47 @@
     z-index: -1;
 }
 
-svg {
-    width: 900px;
-    height: 600px;
-    border: 1px lightsalmon solid;
+.main-header-message {
+    color: #ffbcaf;
 }
+
+.img-fork {
+    position:fixed;
+    top:50px;
+    right:0;
+    border:0;
+}
+
+
+/* start map css */
+path.countries {
+    stroke-width: 1;
+    stroke: black;
+    opacity: .5;
+    fill: red;
+}
+circle.cities {
+    stroke-width: 1;
+    stroke: black;
+    fill: white;
+}
+circle.centroid {
+    fill: red;
+    pointer-events: none;
+}
+rect.bbox {
+    fill: none;
+    stroke-dasharray: 5 5;
+    stroke: black;
+    stroke-width: 2;
+    pointer-events: none;
+}
+path.graticule {
+    fill: none;
+    stroke-width: 1;
+    stroke: black;
+}
+path.graticule.outline {
+    stroke: black;
+}
+/* end map css */
