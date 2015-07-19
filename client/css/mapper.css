@@ -25,6 +25,10 @@ svg {
     border:0;
 }
 
+#playground-button {
+    background-color: #ffb0be;
+}
+
 
 /* start map css */
 path.countries {
