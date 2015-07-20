@@ -62,3 +62,13 @@ path.graticule.outline {
     stroke: black;
 }
 /* end map css */
+
+/* mapbox map */
+#map {
+    position: absolute;
+    top: 140px;
+    bottom: 0;
+    width: 85%;
+    z-index: 1;
+}
+/* end mapbox map */
