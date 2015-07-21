@@ -11,4 +11,11 @@ $(function () {
     Mapper.Lib.hideMapperContainer();
     Mapper.Lib.createMapboxMap();
 
+    $( "#slider" ).slider({
+        value: 10,
+        orientation: "horizontal",
+        range: "min",
+        animate: true
+    });
+
 });

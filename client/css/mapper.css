@@ -1,11 +1,5 @@
 /* CSS declarations go here */
 
-svg {
-    width: 900px;
-    height: 600px;
-    border: 1px lightsalmon solid;
-}
-
 .main-header {
     background-color: #e74347;
     width: 100%;
@@ -25,8 +19,18 @@ svg {
     border:0;
 }
 
+#svg-map-id {
+    width: 900px;
+    height: 600px;
+    border: 1px lightsalmon solid;
+}
+
 #playground-button {
-    background-color: #ffb0be;
+    background-color: #ff9d50;
+}
+
+#slider {
+
 }
 
 

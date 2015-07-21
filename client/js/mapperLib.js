@@ -57,16 +57,16 @@ Mapper.Lib = (function () {
         L.mapbox.accessToken = 'pk.eyJ1IjoianVzdGludSIsImEiOiI3MjA5MjhmZTA0ZGMyYjMzMzE5OWQwZmZkZWE5YTU4MiJ9.voJN-SvlJY5QuW1Qj6d_Gw';
         var map = L.mapbox.map(
                 'map',
-                'justinu.mp37pmc7',  //'mapbox.streets' or 'justinu.moonmnfj' or 'mapbox.streets'
+                'justinu.mp37pmc7',
                 {
                     legendControl: {
                         position: 'topright'
                     }
                 }
             )
-            .setView([33.655, -117.859], 12);
+            .setView([33.65528965, -117.85998702], 12);
 
-        map.legendControl.addLegend("<strong>Let's go to the beach!</strong>");
+        map.legendControl.addLegend("<strong>Engineer Routes for Irvine District</strong>");
 
         /* *****************************************
         var featureLayer = L.mapbox.featureLayer()

@@ -63,7 +63,7 @@
 <br><br><br>
 <!-- Page Content -->
 <div class="container">
-    <h1 class="main-header-message text-nowrap">Welcome to Mapper!</h1>
+    <h1 class="main-header-message text-nowrap">Track Engineer Routes Over Time!</h1>
     <br><br>
 </div> <!-- end container -->
 
@@ -84,7 +84,7 @@
             <h4>Mapper Panel</h4>
         </div>
 		<div id="mapper-panel-body-id" class="panel-body">
-		    <svg>
+		    <svg id="svg-map-id">
 
             </svg>
 		</div>
@@ -94,7 +94,15 @@
 
 <div class="container"> <!-- misc items -->
     <div id="playground-id">
-        <button id="playground-button" type="button" class="btn">Click me!!!</button>
+        <h4><u>Time slider</u></h4>
+        <div style="width: 530px"><span>6am</span><span style="float:right">6pm</span></div>
+        <div id="slider" style="width:500px; margin:15px;"></div>
+
+        <button id="playground-button" type="button" class="btn">Start</button>
+        <!-- comment out iframe
+            <br><br>
+            <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/justinu.mp37pmc7/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoianVzdGludSIsImEiOiI3MjA5MjhmZTA0ZGMyYjMzMzE5OWQwZmZkZWE5YTU4MiJ9.voJN-SvlJY5QuW1Qj6d_Gw'></iframe>
+        -->
     </div>
 </div>
 
