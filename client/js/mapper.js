@@ -9,7 +9,7 @@ $(function () {
     //Mapper.Test.createWorldMap();
 
     Mapper.Lib.hideMapperContainer();
-    Mapper.Lib.createMapboxMap();
+    //Mapper.Lib.createMapboxMap();
 
     $( "#slider" ).slider({
         value: 10,
@@ -45,8 +45,8 @@ var callAjaxSXP = function() {
             type: 'POST',
             url: ajaxURL,
             data: sxpMessage,
-            contentType: 'text/xml',
-            dataType: 'xml'
+            contentType: 'text/xml',    // content type for post request data
+            dataType: 'xml'     // content type for response data
         }
     )
         .done(function (data) {
