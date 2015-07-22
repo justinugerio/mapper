@@ -68,7 +68,6 @@ Mapper.Lib = (function () {
 
         map.legendControl.addLegend("<strong>Engineer Routes for Irvine District</strong>");
 
-        map.dragging.disable();
         map.scrollWheelZoom.disable();
 
 

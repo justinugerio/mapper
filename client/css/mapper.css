@@ -1,5 +1,9 @@
 /* CSS declarations go here */
 
+ul a {
+    cursor: pointer;
+}
+
 .main-header {
     background-color: #e74347;
     width: 100%;
@@ -25,8 +29,22 @@
     border: 1px lightsalmon solid;
 }
 
-#playground-button {
+#control-button {
     background-color: #ff9d50;
+    color: #e2e2e2
+}
+
+#slider {
+    width:450px;
+    margin:15px;
+}
+
+#slider-time-id {
+    width: 480px;
+}
+
+#controls-id {
+    min-height: 140px;
 }
 
 #text-area-input-id {
@@ -57,6 +75,7 @@
     width: 900px;
     height: 500px;
 }
+
 /* end mapbox map */
 
 
