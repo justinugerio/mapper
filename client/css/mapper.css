@@ -29,12 +29,38 @@
     background-color: #ff9d50;
 }
 
-#slider {
+#text-area-input-id {
+    width: 800px;
+    max-width: 800px;
+    height: 200px;
+    max-height: 200px;
+}
 
+#text-area-output-id {
+    width: 800px;
+    max-width: 800px;
+    height: 300px;
+    max-height: 300px;
 }
 
 
-/* start map css */
+/* mapbox map */
+#map-container {
+    position: relative;
+    min-height: 530px;
+    border-color: #e74347;
+    /*border: solid 2px;*/
+}
+
+#map {
+    position: absolute;
+    width: 900px;
+    height: 500px;
+}
+/* end mapbox map */
+
+
+/* start d3.js map css */
 path.countries {
     stroke-width: 1;
     stroke: black;
@@ -65,20 +91,4 @@ path.graticule {
 path.graticule.outline {
     stroke: black;
 }
-/* end map css */
-
-
-/* mapbox map */
-#map-container {
-    position: relative;
-    min-height: 530px;
-    border-color: #e74347;
-    /*border: solid 2px;*/
-}
-
-#map {
-    position: absolute;
-    width: 900px;
-    height: 500px;
-}
-/* end mapbox map */
+/* end d3.js map css */
