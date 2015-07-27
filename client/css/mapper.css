@@ -5,15 +5,26 @@ ul a {
 }
 
 .main-header {
+    position: relative;
     background-color: #e74347;
-    width: 100%;
     height: 140px;
+}
+
+.main-header-container {
     position: absolute;
-    z-index: -1;
+    bottom: 10px;
+}
+
+.header-spacer {
+    height: 40px;
 }
 
 .main-header-message {
     color: #ffbcaf;
+}
+
+.main-header-message small {
+    color: #777777;
 }
 
 .img-fork {
@@ -27,6 +38,14 @@ ul a {
     width: 900px;
     height: 600px;
     border: 1px lightsalmon solid;
+}
+
+#well-map {
+    margin-top: -10px;
+}
+
+#iframe-map-id {
+    margin-top: -30px;
 }
 
 #control-button {

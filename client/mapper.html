@@ -3,8 +3,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Mapper</title>
+    <meta name="author" content="Justin Ugerio">
+    <title>Mapster</title>
     <link rel="icon" type="image/png" href="../favicon.png">
 </head>
 
@@ -21,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="mapper.html">Mapper</a>
+            <a class="navbar-brand" href="mapper.html">Mapster</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,14 +59,18 @@
 </a>
 -->
 
+
 <!-- main header area -->
-<div class="main-header"></div>
-<br><br><br>
-<!-- Page Content -->
-<div class="container">
-    <h1 class="main-header-message text-nowrap">Track Engineer Routes Over Time!</h1>
-    <br><br>
-</div> <!-- end container -->
+<div class="main-header">
+    <div class="container">
+        <div class="main-header-container">
+            <h1 class="main-header-message">Track Engineer Routes Over Time!</h1>
+        </div>
+    </div>
+</div>
+
+<div class="header-spacer"></div>
+<!-- end main header area -->
 
 
 <!-- panel container -->
@@ -84,17 +88,16 @@
 </div>
 <!-- end panel container -->
 
+
 <!-- map container -->
 <div class="container">
-    <div class="well">
+    <div id="well-map" class="well">
         <div id="map-container">
             <br><br>
             <iframe id='iframe-map-id' width='900px' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/justinu.mp37pmc7/attribution,zoompan,geocoder.html?access_token=pk.eyJ1IjoianVzdGludSIsImEiOiI3MjA5MjhmZTA0ZGMyYjMzMzE5OWQwZmZkZWE5YTU4MiJ9.voJN-SvlJY5QuW1Qj6d_Gw'>
             </iframe>
             <!-- comment out map div <div id='map'></div> -->
         </div>
-
-        <br>
 
         <div id="controls-id">
             <div id="controls-left-id" class="col-md-5">
@@ -124,6 +127,7 @@
     </div>
 </div>
 <!-- end map container -->
+
 
 <!-- form container -->
 <div class="container">
