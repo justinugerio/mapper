@@ -2,6 +2,9 @@
 // Global namespace object
 Mapper = {};
 
+Mapper.sliderTick = 100;    // delay for slider
+Mapper.sxpDelay = 1000; // delay for SXP response
+Mapper.sliderState = null;
 
 // main start function
 $(function () {
@@ -12,13 +15,16 @@ $(function () {
     //Mapper.Lib.createMapboxMap();
 
     $( "#slider" ).slider({
-        value: 10,
+        value: 0,
         orientation: "horizontal",
         range: "min",
         animate: true
     });
 
-    var defaultSXP = '<SXPTaskGet Revision = "1.0.0"><Task RefType="ByProperties"><CallID>Justin-2015-06-25-02</CallID> <Number>1</Number></Task></SXPTaskGet>';
+    $('#control-button').click(moveSlider);
+
+    //var defaultSXP = '<SXPTaskGet Revision = "1.0.0"><Task RefType="ByProperties"><CallID>Justin-2015-06-25-02</CallID> <Number>1</Number></Task></SXPTaskGet>';
+    var defaultSXP = '<SXPEngineerGetSchedule Revision="7.5.0"><Engineer><ID>Justin.Ugerio</ID><District>MONROVIA FIELD LOCATION</District></Engineer><TimeInterval><Start>2015-07-28T6:00:00</Start><Finish>2015-07-28T18:00:00</Finish></TimeInterval><WithNA>true</WithNA></SXPEngineerGetSchedule>';
 
     defaultSXP = formatXml(defaultSXP);
     $('#text-area-input-id').val(defaultSXP);
@@ -37,8 +43,11 @@ var callAjaxSXP = function() {
     var sxpMessage;
     var response = '';
     var errorResponse = '';
+    var delay = Mapper.sxpDelay;   // delay to receive SXP response
 
     sxpMessage = $.trim($('#text-area-input-id').val());
+
+    $('#form-button-id i').removeClass('fa-cog').addClass('fa-spinner fa-pulse');
 
     $.ajax(
         {
@@ -50,15 +59,23 @@ var callAjaxSXP = function() {
         }
     )
         .done(function (data) {
-            response = $.trim(data.documentElement.outerHTML);
-            response = formatXml(response);
-            $('#text-area-output-id').val(response);
+            setTimeout(function () {
+                response = $.trim(data.documentElement.outerHTML);
+                response = formatXml(response);
+                $('#text-area-output-id').val(response);
+            }, delay);   // add delay
         })
         .fail(function(jqXHR, status, error) {
-            errorResponse = error;
-            $('#text-area-output-id').val(errorResponse);
+            setTimeout(function () {
+                errorResponse = error;
+                $('#text-area-output-id').val(errorResponse);
+            }, delay);   // add delay
+        })
+        .always(function(jqXHR, status, error) {
+            setTimeout(function () {
+                $('#form-button-id i').removeClass('fa-spinner fa-pulse').addClass('fa-cog');
+            }, delay);   // add delay
         });
-
 };
 
 // format XML with indentation
@@ -93,3 +110,33 @@ function formatXml(xml) {
     return formatted;
 }
 
+
+// automatically move slider when user clicks on Start button
+var moveSlider = function() {
+
+    var value = 0;
+
+    $('#control-button i').removeClass('fa-car').addClass('fa-refresh fa-spin');
+
+    if (Mapper.sliderState == null) {
+        Mapper.sliderState = 'active';
+        setTimeout(addTick, Mapper.sliderTick);   // call recursive function until slider reaches max
+    }
+
+};
+
+// recursive function to move slider
+var addTick = function () {
+    var value = $('#slider').slider('value');
+
+    value = value + 1;
+    $('#slider').slider('value', value);
+
+    if (value >= 100) {
+        $('#control-button i').removeClass('fa-refresh fa-spin').addClass('fa-car');    // done
+        Mapper.sliderState = null;
+    }
+    else {
+        setTimeout(addTick, Mapper.sliderTick);   // recursive call for next tick
+    }
+};
